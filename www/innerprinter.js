@@ -61,6 +61,11 @@ module.exports = {
   },
   printerStatusStopListener: function () {
     exec(function () {}, function () {}, "Printer", "printerStatusStopListener", []);
-  }
-
+  },
+  enterPrinterBuffer: function (clean, resolve, reject) {
+    exec(resolve, reject, "Printer", "enterPrinterBuffer", [clean]);
+  },
+  exitPrinterBuffer: function (commit, resolve, reject) {
+    exec(resolve, reject, "Printer", "exitPrinterBuffer", [commit]);
+  },
 }
